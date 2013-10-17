@@ -1,4 +1,2 @@
 massive-batman
 ==============
-
-hello world
