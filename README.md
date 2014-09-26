@@ -1,9 +1,9 @@
 ## aqsmith / Major-League-Soccer
 
-### This is a list on the markdown file
+Repository will contain Major League Soccer (MLS) analysis and data visualizations.
 
-* Item #1
-* Item #2
-* Item #2
-
-This is regular writing.
+Things I know to be true:
+* I'm a relative R newb. (Read: Go easy on me.)
+* If you have ideas on interesting MLS analysis, let me know.
+* I'd love feedback especially on how my R code could be improved.
+ 
