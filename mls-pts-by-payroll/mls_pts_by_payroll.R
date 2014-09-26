@@ -6,12 +6,13 @@
 club_code <- c("DC", "SKC", "NE", "NYRB", "CLB", "PHI", "TFC", "HOU", "CHI", "MTL", "SEA", 
                "LAG", "RSL", "FCD", "POR", "VAN", "COL", "SJ", "CHV")
 
-# Point Totals Last Updated: 09/24/14 at 11:44 PM
+# Point Totals Last Updated: 09/26/14 at 1:22 PM
 pts <- c(48, 45, 42, 41, 40, 38, 37, 33, 31, 24, 54, 54, 49, 48, 39, 37, 31, 28, 24)
 
 # If the playoffs started today, would the team be in?
-playoffs <- c("Yes", "Yes", "Yes", "Yes", "Yes", "No", "No", "No", "No", "No", "Yes", "Yes", "Yes", "Yes", "Yes",
-              "No", "No", "No", "No")
+# Top Five Clubs in Each Conference Reach Playoffs
+playoffs <- c("Yes", "Yes", "Yes", "Yes", "Yes", "No", "No", "No", "No", "No", "Yes",
+              "Yes", "Yes", "Yes", "Yes", "No", "No", "No", "No")
 
 # Create a dataframe of the data entered above
 club_pts <- data.frame(club_code, pts, playoffs)
@@ -43,7 +44,7 @@ graph <- qplot(x = final$pts,
               y = final$Payroll / 1000000, # y-axis will be in $MM
               data = final,
               main = "MLS Teams with higher payrolls tend to make the playoffs",
-              xlab = "Points (as of 9/24/14)",
+              xlab = "Points (as of 9/26/14)",
               ylab = "Team Payroll ($MM)",
               label = final$club_code, 
               geom = "text",
