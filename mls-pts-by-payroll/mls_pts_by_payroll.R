@@ -43,7 +43,7 @@ names(final)[4] <- c("Payroll")
 graph <- qplot(x = final$pts, 
               y = final$Payroll / 1000000, # y-axis will be in $MM
               data = final,
-              main = "MLS Teams with higher payrolls tend to make the playoffs",
+              main = "MLS Teams by Points and Team Payroll",
               xlab = "Points (as of 9/26/14)",
               ylab = "Team Payroll ($MM)",
               label = final$club_code, 
@@ -56,4 +56,4 @@ graph + scale_colour_discrete(name = "Clinched playoff spot\nif it started today
                             labels = c("No", "Yes")) +
         theme(title = element_text(face = "bold", 
                                    color = "black", 
-                                   size = 14))
+                                   size = 16))
