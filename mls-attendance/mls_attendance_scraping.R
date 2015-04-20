@@ -21,7 +21,7 @@ GetElement <- function(x, num, delim = "[") {
 }
 
 # Paste the website URL you want to scrape
-url <- "http://matchcenter.mlssoccer.com/matchcenter/2015-03-07-dc-united-vs-montreal-impact/boxscore"
+url <- "http://matchcenter.mlssoccer.com/matchcenter/2015-03-15-new-york-city-fc-vs-new-england-revolution/boxscore"
 
 # Start scraping using the rvest package
 game_data <- html(url)
@@ -80,6 +80,59 @@ if (home_team == "D.C. United") {
 } else if
 (home_team == "LA Galaxy") {
   temperature <- getWeatherForDate("LAX", date)
+} else if
+(home_team == "New England") {
+  temperature <- getWeatherForDate("BOS", date)
+} else if 
+(home_team == "New York City") {
+  temperature <- getWeatherForDate("LGA", date)
+}
+##
+else if
+(home_team == "New York Red Bulls") {
+  temperature <- getWeatherForDate("POR", date)
+} else if
+(home_team == "Columbus Crew") {
+  temperature <- getWeatherForDate("LAX", date)
+} else if
+(home_team == "Orlando") {
+  temperature <- getWeatherForDate("BOS", date)
+} else if 
+(home_team == "Chicago") {
+  temperature <- getWeatherForDate("LGA", date)
+} else if
+(home_team == "Philadelphia") {
+  temperature <- getWeatherForDate("POR", date)
+} else if
+(home_team == "Toronto") {
+  temperature <- getWeatherForDate("LAX", date)
+} else if
+(home_team == "Montreal") {
+  temperature <- getWeatherForDate("BOS", date)
+} else if 
+(home_team == "Vancouver") {
+  temperature <- getWeatherForDate("LGA", date)
+} else if
+(home_team == "Dallas") {
+  temperature <- getWeatherForDate("POR", date)
+} else if
+(home_team == "Seattle") {
+  temperature <- getWeatherForDate("LAX", date)
+} else if
+(home_team == "San Jose") {
+  temperature <- getWeatherForDate("BOS", date)
+} else if 
+(home_team == "Houston") {
+  temperature <- getWeatherForDate("LGA", date)
+} else if
+(home_team == "Real Salt Lake") {
+  temperature <- getWeatherForDate("POR", date)
+} else if
+(home_team == "Sporting Kansas City") {
+  temperature <- getWeatherForDate("LAX", date)
+} else if
+(home_team == "Colorado") {
+  temperature <- getWeatherForDate("BOS", date)
 }
 
 max_temperature <- as.numeric(temperature[2])
