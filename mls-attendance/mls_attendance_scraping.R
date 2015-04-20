@@ -21,7 +21,7 @@ GetElement <- function(x, num, delim = "[") {
 }
 
 # Paste the website URL you want to scrape
-url <- "http://matchcenter.mlssoccer.com/matchcenter/2015-03-15-new-york-city-fc-vs-new-england-revolution/boxscore"
+url <- "http://matchcenter.mlssoccer.com/matchcenter/2015-03-07-vancouver-whitecaps-fc-vs-toronto-fc/boxscore"
 
 # Start scraping using the rvest package
 game_data <- html(url)
@@ -35,8 +35,6 @@ game_date <- game_data %>%
                 as.character()
 
 game_day <- as.character(GetElement(game_date, 0, ","))
-
-
 url_game_date <- as.character(GetElement(url, 4, "/"))
 
 year <- as.numeric(GetElement(url_game_date, 0, "-"))
@@ -86,53 +84,51 @@ if (home_team == "D.C. United") {
 } else if 
 (home_team == "New York City") {
   temperature <- getWeatherForDate("LGA", date)
-}
-##
-else if
+} else if
 (home_team == "New York Red Bulls") {
-  temperature <- getWeatherForDate("POR", date)
+  temperature <- getWeatherForDate("EWR", date)
 } else if
 (home_team == "Columbus Crew") {
-  temperature <- getWeatherForDate("LAX", date)
+  temperature <- getWeatherForDate("CMH", date)
 } else if
 (home_team == "Orlando") {
-  temperature <- getWeatherForDate("BOS", date)
+  temperature <- getWeatherForDate("MCO", date)
 } else if 
 (home_team == "Chicago") {
-  temperature <- getWeatherForDate("LGA", date)
+  temperature <- getWeatherForDate("ORD", date)
 } else if
 (home_team == "Philadelphia") {
-  temperature <- getWeatherForDate("POR", date)
+  temperature <- getWeatherForDate("PHL", date)
 } else if
-(home_team == "Toronto") {
-  temperature <- getWeatherForDate("LAX", date)
+(home_team == "Toronto FC") {
+  temperature <- getWeatherForDate("YYZ", date)
 } else if
 (home_team == "Montreal") {
-  temperature <- getWeatherForDate("BOS", date)
+  temperature <- getWeatherForDate("YUL", date)
 } else if 
 (home_team == "Vancouver") {
-  temperature <- getWeatherForDate("LGA", date)
+  temperature <- getWeatherForDate("YVR", date)
 } else if
 (home_team == "Dallas") {
-  temperature <- getWeatherForDate("POR", date)
+  temperature <- getWeatherForDate("DFW", date)
 } else if
 (home_team == "Seattle") {
-  temperature <- getWeatherForDate("LAX", date)
+  temperature <- getWeatherForDate("SEA", date)
 } else if
 (home_team == "San Jose") {
-  temperature <- getWeatherForDate("BOS", date)
+  temperature <- getWeatherForDate("SJC", date)
 } else if 
 (home_team == "Houston") {
-  temperature <- getWeatherForDate("LGA", date)
+  temperature <- getWeatherForDate("HOU", date)
 } else if
 (home_team == "Real Salt Lake") {
-  temperature <- getWeatherForDate("POR", date)
+  temperature <- getWeatherForDate("SLC", date)
 } else if
 (home_team == "Sporting Kansas City") {
-  temperature <- getWeatherForDate("LAX", date)
+  temperature <- getWeatherForDate("MCI", date)
 } else if
 (home_team == "Colorado") {
-  temperature <- getWeatherForDate("BOS", date)
+  temperature <- getWeatherForDate("DIA", date)
 }
 
 max_temperature <- as.numeric(temperature[2])
