@@ -21,7 +21,7 @@ GetElement <- function(x, num, delim = "[") {
 }
 
 # Paste the website URL you want to scrape
-url <- "http://matchcenter.mlssoccer.com/matchcenter/2015-03-07-portland-timbers-vs-real-salt-lake/boxscore"
+url <- "http://matchcenter.mlssoccer.com/matchcenter/2015-03-21-colorado-rapids-vs-new-york-city-fc/boxscore"
 
 # Start scraping using the rvest package
 game_data <- html(url)
@@ -85,7 +85,7 @@ if (home_team == "D.C. United") {
 (home_team == "New York City") {
   temperature <- getWeatherForDate("LGA", date)
 } else if
-(home_team == "New York Red Bulls") {
+(home_team == "NY Red Bulls") {
   temperature <- getWeatherForDate("EWR", date)
 } else if
 (home_team == "Columbus") {
@@ -124,11 +124,11 @@ if (home_team == "D.C. United") {
 (home_team == "Real Salt Lake") {
   temperature <- getWeatherForDate("SLC", date)
 } else if
-(home_team == "Sporting Kansas City") {
+(home_team == "Sporting KC") {
   temperature <- getWeatherForDate("MCI", date)
 } else if
 (home_team == "Colorado") {
-  temperature <- getWeatherForDate("DIA", date)
+  temperature <- getWeatherForDate("DEN", date)
 }
 
 max_temperature <- as.numeric(temperature[2])
