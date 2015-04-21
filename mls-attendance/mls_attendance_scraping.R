@@ -2,6 +2,9 @@
 library(rvest)
 library(weatherData)
 
+##############################################################################
+# LOAD FUNCTIONS
+
 # Load the Trim function
 trim <- function (x) gsub("^\\s+|\\s+$", "", x)
 
@@ -63,6 +66,8 @@ GetAirport <- function(home_team)
   } else if (home_team == "Vancouver") {
     airport <- "YVR"
   }
+##############################################################################
+# START SCRIPT
 
 # Paste the website URL you want to scrape
 url <- "http://matchcenter.mlssoccer.com/matchcenter/2015-03-29-real-salt-lake-vs-toronto-fc/boxscore"
