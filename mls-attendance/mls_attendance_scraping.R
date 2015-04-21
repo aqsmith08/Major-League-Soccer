@@ -20,8 +20,52 @@ GetElement <- function(x, num, delim = "[") {
   return(sapply(strsplit(x, paste0("[", delim, "]")), "[[", num +1))
 }
 
+# Load the GetAirport function based on home team
+GetAirport <- function(home_team)
+  if (home_team == "Chicago") {
+    airport <- "ORD"
+  } else if(home_team == "Colorado") {
+    airport <- "DEN"
+  } else if (home_team == "Columbus") {
+    airport <- "CMH"
+  } else if (home_team == "D.C. United") {
+    airport <- "DCA"
+  } else if (home_team == "FC Dallas") {
+    airport <- "DFW"
+  } else if (home_team == "Houston") {
+    airport <- "HOU"
+  } else if (home_team == "LA Galaxy") {
+    airport <- "LAX"
+  } else if (home_team == "Montreal") {
+    airport <- "YUL"
+  } else if (home_team == "New England") {
+    airport <- "BOS"
+  } else if (home_team == "New York City") {
+    airport <- "LGA"
+  } else if (home_team == "NY Red Bulls") {
+    airport <- "EWR"
+  } else if (home_team == "Orlando") {
+    airport <- "MCO"
+  } else if (home_team == "Portland") {
+    airport <- "POR"
+  } else if (home_team == "Philadelphia") {
+    airport <- "PHL"
+  } else if (home_team == "Real Salt Lake") {
+    airport <- "SLC"
+  } else if (home_team == "San Jose") {
+    airport <- "SJC"
+  } else if (home_team == "Seattle") {
+    airport <- "SEA"
+  } else if (home_team == "Sporting KC") {
+    airport <- "MCI"
+  } else if (home_team == "Toronto FC") {
+    airport <- "YYZ"
+  } else if (home_team == "Vancouver") {
+    airport <- "YVR"
+  }
+
 # Paste the website URL you want to scrape
-url <- "http://matchcenter.mlssoccer.com/matchcenter/2015-03-21-colorado-rapids-vs-new-york-city-fc/boxscore"
+url <- "http://matchcenter.mlssoccer.com/matchcenter/2015-03-29-real-salt-lake-vs-toronto-fc/boxscore"
 
 # Start scraping using the rvest package
 game_data <- html(url)
@@ -70,67 +114,10 @@ away_team <- game_data %>%
 ##############################################################################
 # TEMPERATURE
 
-if (home_team == "D.C. United") {
-  temperature <- getWeatherForDate("DCA", date)
-} else if
-(home_team == "Portland") {
-  temperature <- getWeatherForDate("POR", date)
-} else if
-(home_team == "LA Galaxy") {
-  temperature <- getWeatherForDate("LAX", date)
-} else if
-(home_team == "New England") {
-  temperature <- getWeatherForDate("BOS", date)
-} else if 
-(home_team == "New York City") {
-  temperature <- getWeatherForDate("LGA", date)
-} else if
-(home_team == "NY Red Bulls") {
-  temperature <- getWeatherForDate("EWR", date)
-} else if
-(home_team == "Columbus") {
-  temperature <- getWeatherForDate("CMH", date)
-} else if
-(home_team == "Orlando") {
-  temperature <- getWeatherForDate("MCO", date)
-} else if 
-(home_team == "Chicago") {
-  temperature <- getWeatherForDate("ORD", date)
-} else if
-(home_team == "Philadelphia") {
-  temperature <- getWeatherForDate("PHL", date)
-} else if
-(home_team == "Toronto FC") {
-  temperature <- getWeatherForDate("YYZ", date)
-} else if
-(home_team == "Montreal") {
-  temperature <- getWeatherForDate("YUL", date)
-} else if 
-(home_team == "Vancouver") {
-  temperature <- getWeatherForDate("YVR", date)
-} else if
-(home_team == "FC Dallas") {
-  temperature <- getWeatherForDate("DFW", date)
-} else if
-(home_team == "Seattle") {
-  temperature <- getWeatherForDate("SEA", date)
-} else if
-(home_team == "San Jose") {
-  temperature <- getWeatherForDate("SJC", date)
-} else if 
-(home_team == "Houston") {
-  temperature <- getWeatherForDate("HOU", date)
-} else if
-(home_team == "Real Salt Lake") {
-  temperature <- getWeatherForDate("SLC", date)
-} else if
-(home_team == "Sporting KC") {
-  temperature <- getWeatherForDate("MCI", date)
-} else if
-(home_team == "Colorado") {
-  temperature <- getWeatherForDate("DEN", date)
-}
+# Get temperature data via getWeatherForDate
+temperature <- getWeatherForDate(GetAirport(home_team), date)
 
+# Assign the temperature into max, mean and min
 max_temperature <- as.numeric(temperature[2])
 mean_temperature <- as.numeric(temperature[3])
 min_temperature <- as.numeric(temperature[4])
