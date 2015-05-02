@@ -70,7 +70,7 @@ GetAirport <- function(home_team)
 # START SCRIPT
 
 # Paste the website URL you want to scrape
-url <- "http://matchcenter.mlssoccer.com/matchcenter/2015-03-29-real-salt-lake-vs-toronto-fc/boxscore"
+url <- "http://matchcenter.mlssoccer.com/matchcenter/2015-04-29-new-york-red-bulls-vs-colorado-rapids/boxscore"
 
 # Start scraping using the rvest package
 game_data <- html(url)
@@ -85,7 +85,6 @@ game_date <- game_data %>%
 
 game_day <- as.character(GetElement(game_date, 0, ","))
 url_game_date <- as.character(GetElement(url, 4, "/"))
-
 year <- as.numeric(GetElement(url_game_date, 0, "-"))
 month <- as.numeric(GetElement(url_game_date, 1, "-"))
 day <- as.numeric(GetElement(url_game_date, 2, "-"))
@@ -137,3 +136,6 @@ df <- data.frame(date, game_day, home_team, away_team, attendance,
 
 # Merge the data frames
 all_games <- rbind(all_games, df)
+
+# If you need to format date from character
+# all_games$date <- as.Date(all_games$date, "%m/%d/%Y")
