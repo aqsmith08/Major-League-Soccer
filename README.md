@@ -12,3 +12,4 @@ For MLS Attendance, I'd like to add the following data points:
 * Time of game
 * Average attendance by team in 2014
 * Game anticipation (maybe measured by # of tweets in previous seven days before game date)
+* Team average points per game
